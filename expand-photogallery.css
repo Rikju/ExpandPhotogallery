@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: BalooDa;
+    src: url(fonts/Baloo_Da_2/static/BalooDa2-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Gloria-Hallelujah;
+    src: url(fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf);
+}
+
+body {
+    background-color: #E1E9FA;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.headingOne {
+    font-family: BalooDa, sans-serif;
+    color: #373B2F;
+    font-size: 50px;
+}
+
+.img1 {
+    background-image: url(img/img1.jpg);
+}
+
+.img2 {
+    background-image: url(img/img2.jpg);
+}
+
+.img3 {
+    background-image: url(img/img3.jpg);
+}
+
+.img4 {
+    background-image: url(img/img4.jpg);
+}
+
+.img5 {
+    background-image: url(img/img5.jpg);
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    border: 1px solid #9BAD79;
+    border-radius: 30px;
+    color: whitesmoke;
+    cursor: pointer;
+    margin: 10px;
+    flex: 0.5; /* srovnává nám to šířku fotografií */
+    position: relative;
+    transition: flex 0.5s linear;
+
+}
+
+.photo-heading {
+    font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 0.05em;
+    font-family: Gloria-Hallelujah, sans-serif;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+}
+
+.slide.active {
+    flex: 4;
+}
+
+.slide.active h2 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+}
+
+@media (max-width: 600px){
+    .container {
+        width: 100vw;
+    }
+
+    .slide:nth-of-type(4), .slide:nth-of-type(5) {
+        display: none;
+    }
+
+}
+
+@media (max-width:400px){
+    .container {
+        width: 100vw;
+    }
+
+    .slide:nth-of-type(3), .slide:nth-of-type(4), .slide:nth-of-type(5) {
+        display: none;
+    }
+
+}
